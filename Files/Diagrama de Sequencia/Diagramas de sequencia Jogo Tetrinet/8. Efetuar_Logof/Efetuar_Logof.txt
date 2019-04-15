@@ -1,0 +1,18 @@
+/* História - como o desenvolvedor modela o criação do jogo tetrinet
+cliente e sevidor, para que todos os envolvidos, gerentes ou membros da equipe de desenvolvimento possa entender o jogo tetrinet */
+/* Grupo devel-docs */
+
+@startuml
+
+autonumber
+actor Cliente
+boundary Computador
+Cliente -> Computador : Usuário no computador\njogando Tetrinet
+Computador -> Tetrinet : O usuário deseja fazer LOGOF(sair do jogo)\n
+Computador -> Cliente : Para fazer Logof\nele clicar no botao Sair(Logof)   
+Cliente -> Cliente: Usuário clicar na botão Logof
+Computador -> Tetrinet : Computador recebe movimentos\n e envia para Jogo Tetrinet 
+Tetrinet -> Tetrinet : Movimento e recebido com sucesso
+Cliente -> Cliente : Logof Realizado...
+
+@enduml

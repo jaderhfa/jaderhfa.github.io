@@ -1,0 +1,24 @@
+/* História - como o desenvolvedor modela o criação do jogo tetrinet
+cliente e sevidor, para que todos os envolvidos, gerentes ou membros da equipe de desenvolvimento possa entender o jogo tetrinet */
+/* Autor: grupo devel-docs */
+
+@startuml
+
+autonumber
+actor Cliente
+boundary Computador
+Cliente -> Computador : Liga o computador \n para Jogar Tetrinet
+Computador -> Tetrinet : Usuário abre o Cliente Tetrinet\n 
+Cliente -> Tetrinet : Usuário informa Login\npara jogar
+Tetrinet-> ServidorTetrinet : Cliente Tetrinet (requisição) conecta no servidor\npelo protocolo TCP
+ServidorTetrinet -> ServidorTetrinet : Informando o Login\n
+ServidorTetrinet -> Tetrinet : Servidor devolve (responde) uma mensagem\ninformado que conectou
+Cliente -> Cliente : Usuário Inicia o Jogo\n
+Tetrinet-> ServidorTetrinet : Cliente Tetrinet comunica com o servidor\natravés do protocolo TCP
+Tetrinet-> ServidorTetrinet : Uma mensagem criptografada e informada\npara iniciar o jogo
+ServidorTetrinet -> Tetrinet : O Servidor devolve uma mensagem criptografada...\nJogo iniciado...
+Cliente -> Computador : Usuário faz um movimento
+Computador -> Tetrinet: Movimento e recebido no Jogo Tetrinet
+Tetrinet-> ServidorTetrinet : Cliente Tetrinet Transforma\nesse movimento em uma mensagem criptografada
+Tetrinet-> ServidorTetrinet : Passando para o servidor\natravés do protocolo TCP
+@enduml

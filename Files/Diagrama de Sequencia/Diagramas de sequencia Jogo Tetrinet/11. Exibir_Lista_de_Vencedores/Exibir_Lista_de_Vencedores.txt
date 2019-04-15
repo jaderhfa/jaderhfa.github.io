@@ -1,0 +1,18 @@
+/* História - como o desenvolvedor modela o criação do jogo tetrinet
+cliente e sevidor, para que todos os envolvidos, gerentes ou membros da equipe de desenvolvimento possa entender o jogo tetrinet */
+/* Grupo devel-docs */
+
+@startuml
+
+autonumber
+actor Cliente
+boundary Computador
+Cliente -> Computador : Usuário no computador\njogando Tetrinet
+Computador -> Tetrinet : O Usuário deseja exibir\nLista de vencedores
+Computador -> Cliente : Para exibir lista de vencedores\nusuário clicar no botao 'Lista Vencedores' 
+Cliente -> Cliente: Usuário clicar na botão 'Lista Vencedores'!
+Computador -> Tetrinet : Computador recebe movimento\n e envia para Jogo Tetrinet 
+Tetrinet -> Tetrinet : Movimento e recebido com sucesso
+Computador -> Computador: Na tela e exibindo \nLista de Vencedores da partida 
+
+@enduml

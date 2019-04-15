@@ -1,0 +1,16 @@
+/* História - como o desenvolvedor modela o criação do jogo tetrinet
+cliente e sevidor, para que todos os envolvidos, gerentes ou membros da equipe de desenvolvimento possa entender o jogo tetrinet */
+/* Grupo devel-docs */
+
+@startuml
+
+autonumber
+actor Cliente
+boundary Computador
+Cliente -> Computador : Liga o computador \n e inicia o Jogo Tetrinet
+Cliente -> Computador : O usuário fornece um nick e \num servidor para conectar
+Tetrinet -> Computador : O sistema informa que\no nick é protegido por senha\n
+Computador -> Tetrinet : O usuário conecta em uma partida\n
+Cliente -> Cliente: Usuário Ganha um número de 1 a 6 que o identifica.
+Cliente -> Computador : Usuário escolhe o numero\n e inicia a partida\n
+@enduml

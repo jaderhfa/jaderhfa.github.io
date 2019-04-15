@@ -1,0 +1,19 @@
+/* História - como o desenvolvedor modela o criação do jogo tetrinet
+cliente e sevidor, para que todos os envolvidos, gerentes ou membros da equipe de desenvolvimento possa entender o jogo tetrinet */
+/* Grupo devel-docs */
+
+@startuml
+
+autonumber
+actor Cliente
+boundary Computador
+Cliente -> Computador : Usuário no computador\njogando Tetrinet
+Computador -> Tetrinet : O usuário precisa mover\nPeça do jogo para Direita ou Esquerda
+Computador -> Cliente : Para mover peça\nele deve escolher uma tecla.
+Cliente  -> Computador : O jogador quer mover a peça à direita,\nentão irá pressionar a tecla direcional RIGHT (padrão)\ne a peça irá se movimentar para direita.
+Cliente  -> Computador : O jogador quer mover a peça à esquerda,\nentão irá pressionar a tecla direcional LEFT (padrão)\ne a peça irá se movimentar para esquerda.
+Cliente -> Cliente: Usuário escolhe a tecla < para Direita\nou > para Esquerda
+Computador -> Tetrinet : Computador recebe movimentos\n e envia para Jogo Tetrinet 
+Tetrinet -> Tetrinet : Movimento e recebido com sucesso
+
+@enduml

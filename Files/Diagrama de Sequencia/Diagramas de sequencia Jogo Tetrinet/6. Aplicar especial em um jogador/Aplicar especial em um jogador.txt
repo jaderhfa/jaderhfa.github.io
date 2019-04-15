@@ -1,0 +1,18 @@
+/* História - como o desenvolvedor modela o criação do jogo tetrinet
+cliente e sevidor, para que todos os envolvidos, gerentes ou membros da equipe de desenvolvimento possa entender o jogo tetrinet */
+/* Grupo devel-docs */
+
+@startuml
+
+autonumber
+actor Cliente
+boundary Computador
+Cliente -> Computador : Usuário no computador\njogando Tetrinet
+Computador -> Tetrinet : O usuário precisa aplicar especial\n
+Computador -> Cliente : Para aplciar especial \nele deve escolher uma tecla.
+Cliente  -> Computador : O jogador precisa ganhar os especiais\nao completar a linha em que existe uma peça com uma letra identificando o especial.\nAs letras que identificam os especiais são:\nA - Add Line\nC - Clear Line\nN - Nuke Field\nR - Random Blocks\nS - Switch Fields\nB - Clear Special\nG - Block Gravity\nQ - Blockquake\nO - Block Bomb\n
+Computador -> Tetrinet : O jogador quer aplicar o especial conquistado que aparece na fila \nde especiais, então irá primeiramente identificar qual jogador adversário\nirá atacar através do número identifcador que aparece junto ao nickname, os números vão de 1 a 6, se vc for o jogador número 1 por exemplo,\nentão poderá aplicar o especial pressionando as teclas 2, 3, 4, 5 e 6 para atacar os respectivos jogadores,\nou pressionando a tecla 1 para aplicar o especial em si mesmo.
+Computador -> Tetrinet : Computador recebe movimentos\n e envia para Jogo Tetrinet 
+Tetrinet -> Tetrinet : Movimento e recebido com sucesso
+
+@enduml
