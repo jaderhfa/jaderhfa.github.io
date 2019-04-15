@@ -1,6 +1,6 @@
 ﻿# Equipe da Documentação do Desenvolvedor
 
-View docs: http://tetrinetjs.gitlab.io/devel-docs/
+View docs: https://jaderhfa.github.io/
 
 ----
 
